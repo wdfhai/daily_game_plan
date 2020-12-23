@@ -1,4 +1,3 @@
-// $(document).ready(function () {
 
 var currentDate = $("#currentDay")[0];
 currentDate.textContent = moment().format('LLLL');
@@ -20,9 +19,9 @@ var fourPm = $("#16")[0];
 var fivePm = $("#17")[0];
 var blocks = [nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm, threePm, fourPm, fivePm];
 var saveBtn = $(".saveBtn");
+var clearBtn = $("#clearBtn");
 
-var a = nineAm.textContent;
-// console.log(a);
+// var a = nineAm.textContent;
 
 blocks.forEach(block => {
     var blockNum = parseInt(block.name);
@@ -40,13 +39,9 @@ var i="";
 function save (event){
     event.preventDefault();
     var v = parseInt(event.target.value);
-    // console.log(event.target);
-    // console.log(v);
     var x = $("#\\[v\\]");
-    // console.log(x);
     for (i=0;i < 9;i++){
         var tasks = $(".description")[i].value;
-        // console.log(tasks);
         localStorage.setItem(i,tasks);
         var storedTasks = localStorage.getItem(i);
         console.log(storedTasks);
@@ -61,8 +56,13 @@ function refresh (){
 };
 };
 
+function clear (){
+    localStorage.clear();
+    location.reload();
+}
+
+clearBtn.on("click", clear);
+
 saveBtn.on("click", save);
 
 $(window).unload(refresh());
-
-// });
