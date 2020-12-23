@@ -1,38 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Develop/style.css" />
+  <title>Daily Game Plan</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Daily Game Plan</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="quote"> “By failing to prepare, you are preparing to fail.” – Benjamin Franklin</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <!-- Timeblocks go here -->
+    <form class="row time-block form-group" id="9AM">
+
+      <p class="col-sm-1">9AM</p>
+
+      <textarea class="col-sm-10 description form-control" id="9" name="9" type="text" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn input-group-addon btn-primary fa fa-save saveBtn" name="9"></button>
+      </button>
+    </form>
+    <div class="row time-block" id="10AM">
+      <div class="col-sm-1 hour">
+        <p>10AM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="10" name="10" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
     </div>
+    <div class="row time-block" id="11AM">
+      <div class="col-sm-1 hour">
+        <p>11AM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="11" name="11" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
+    </div>
+    <div class="row time-block" id="12PM">
+      <div class="col-sm-1 hour">
+        <p>12PM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="12" name="12" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
+    </div>
+    <div class="row time-block" id="1PM">
+      <div class="col-sm-1 hour">
+        <p>1PM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="13" name="13" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
+    </div>
+    <div class="row time-block" id="2PM">
+      <div class="col-sm-1 hour">
+        <p>2PM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="14" name="14" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
+    </div>
+    <div class="row time-block" id="3PM">
+      <div class="col-sm-1 hour">
+        <p>3PM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="15" name="15" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
+    </div>
+    <div class="row time-block" id="4PM">
+      <div class="col-sm-1 hour">
+        <p>4PM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="16" name="16" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
+    </div>
+    <div class="row time-block" id="5PM">
+      <div class="col-sm-1 hour">
+        <p>5PM</p>
+      </div>
+      <textarea class="col-sm-10 description form-control" id="17" name="17" rows="2">
+      </textarea>
+      <button class="col-sm-1 btn btn-primary fa fa-save saveBtn"></button>
+    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
+  <script src="./Develop/script.js"></script>
+</body>
+
 </html>
