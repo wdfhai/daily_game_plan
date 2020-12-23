@@ -1,3 +1,5 @@
+// $(document).ready(function () {
+
 var currentDate = $("#currentDay")[0];
 currentDate.textContent = moment().format('LLLL');
 
@@ -17,12 +19,13 @@ var threePm = $("#15")[0];
 var fourPm = $("#16")[0];
 var fivePm = $("#17")[0];
 var blocks = [nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm, threePm, fourPm, fivePm];
+var saveBtn = $(".saveBtn");
+
+var a = nineAm.textContent;
+// console.log(a);
 
 blocks.forEach(block => {
-    console.log(currentHour);
-    console.log(block);
     var blockNum = parseInt(block.name);
-    console.log(blockNum);
     if (blockNum === currentHour){
         block.style.backgroundColor = '#ff6961';
     } else if (blockNum < currentHour){
@@ -32,14 +35,34 @@ blocks.forEach(block => {
     }
 });
 
+var i="";
 
 function save (event){
     event.preventDefault();
-    alert("Save button clicked.");
-    var tc = $("textarea").textContent;
-    console.log(tc);
-    // str = tc.textContent;
-    // console.log(str);
-
+    var v = parseInt(event.target.value);
+    // console.log(event.target);
+    // console.log(v);
+    var x = $("#\\[v\\]");
+    // console.log(x);
+    for (i=0;i < 9;i++){
+        var tasks = $(".description")[i].value;
+        // console.log(tasks);
+        localStorage.setItem(i,tasks);
+        var storedTasks = localStorage.getItem(i);
+        console.log(storedTasks);
+    };
 };
-$(".saveBtn").on('click', save);
+
+function refresh (){
+    for (i=0;i < 9;i++){
+        var storedTasks = localStorage.getItem(i);
+        $(".description")[i].value = storedTasks;
+        console.log(storedTasks);
+};
+};
+
+saveBtn.on("click", save);
+
+$(window).unload(refresh());
+
+// });
