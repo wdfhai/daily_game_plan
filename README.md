@@ -14,7 +14,7 @@ Welcome to my repo for my Daily Game Plan. This is a web-based daily activity ma
 
 ## Preview
 
-<img src='./assets/preview.png' alt='planner preview'>
+<img src='./Assets/preview.png' alt='planner preview'>
 
 ## Deployed Link
 
