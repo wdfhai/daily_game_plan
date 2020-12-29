@@ -14,6 +14,8 @@ Welcome to my repo for my Daily Game Plan. This is a web-based daily activity ma
 
 ## Preview
 
+<img src='./assets/preview.png' alt='planner preview'>
+
 ## Deployed Link
 
 https://wdfhai.github.io/daily_game_plan/
