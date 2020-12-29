@@ -2,10 +2,8 @@
 var currentDate = $("#currentDay")[0];
 currentDate.textContent = moment().format('LLLL');
 
-var currentHour = parseInt(moment().format('LT'));
-if (currentHour < 9){
-    currentHour = currentHour + 12;
-};
+var currentHour = parseInt(moment().format('H'));
+console.log(currentHour);
 
 var textAreaValues = [9,10,11,12,13,14,15,16,17];
 var nineAm = $("#9")[0];
@@ -21,8 +19,6 @@ var blocks = [nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm, threePm, fourPm, 
 var saveBtn = $(".saveBtn");
 var clearBtn = $("#clearBtn");
 
-// var a = nineAm.textContent;
-
 blocks.forEach(block => {
     var blockNum = parseInt(block.name);
     if (blockNum === currentHour){
@@ -34,32 +30,47 @@ blocks.forEach(block => {
     }
 });
 
-var i="";
+var v="";
+
+// function save (event){
+//     event.preventDefault();
+//     var v = parseInt(event.target.value);
+//     var x = parseInt($("#"+v)[0].name);
+//     console.log(v);
+//     console.log(x);
+//     for (i=0;i < 9;i++){
+//         var tasks = $(".description")[i].value;
+//         localStorage.setItem(i,tasks);
+//         var storedTasks = localStorage.getItem(i);
+//         console.log(storedTasks);
+//     };
+// };
 
 function save (event){
     event.preventDefault();
     var v = parseInt(event.target.value);
-    var x = $("#\\[v\\]");
-    for (i=0;i < 9;i++){
-        var tasks = $(".description")[i].value;
-        localStorage.setItem(i,tasks);
-        var storedTasks = localStorage.getItem(i);
-        console.log(storedTasks);
-    };
+    // var x = parseInt($("#"+v)[0].name);
+    console.log(v);
+    // console.log(x);
+    var tasks = $(".description")[v].value;
+    localStorage.setItem(v,tasks);
+    var storedTasks = localStorage.getItem(v);
+    console.log(storedTasks);
 };
+
 
 function refresh (){
     for (i=0;i < 9;i++){
         var storedTasks = localStorage.getItem(i);
         $(".description")[i].value = storedTasks;
         console.log(storedTasks);
-};
+    };
 };
 
 function clear (){
     localStorage.clear();
     location.reload();
-}
+};
 
 clearBtn.on("click", clear);
 
